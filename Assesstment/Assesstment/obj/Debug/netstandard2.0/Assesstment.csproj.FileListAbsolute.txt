@@ -1,0 +1,16 @@
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Assesstment.deps.json
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Assesstment.dll
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Assesstment.pdb
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.csproj.AssemblyReference.cache
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.AssemblyInfoInputs.cache
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.AssemblyInfo.cs
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.csproj.CoreCompileInputs.cache
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.dll
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\refint\Assesstment.dll
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.pdb
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\ref\Assesstment.dll
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Views\CatalogView.xaml.g.cs
