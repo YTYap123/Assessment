@@ -14,6 +14,8 @@ namespace Assesstment.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            Window.SetStatusBarColor(Android.Graphics.Color.Rgb(39, 95, 170));
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

@@ -14,3 +14,4 @@ C:\Working\Assesstment\Assesstment\Assesstment\obj\Release\netstandard2.0\Assess
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Release\netstandard2.0\refint\Assesstment.dll
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Release\netstandard2.0\Assesstment.pdb
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Release\netstandard2.0\ref\Assesstment.dll
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Release\netstandard2.0\Images\GeneralImages\cart.png

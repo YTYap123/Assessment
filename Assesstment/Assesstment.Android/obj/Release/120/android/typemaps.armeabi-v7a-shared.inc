@@ -7,33 +7,33 @@ map_aname.0:
 
 	.type	map_aname.1, %object
 map_aname.1:
-	.asciz	"Xamarin.AndroidX.Fragment"
-	.size	map_aname.1, 26
+	.asciz	"Mono.Android"
+	.size	map_aname.1, 13
 
 	.type	map_aname.2, %object
 map_aname.2:
-	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModel"
-	.size	map_aname.2, 37
+	.asciz	"Xamarin.AndroidX.Fragment"
+	.size	map_aname.2, 26
 
 	.type	map_aname.3, %object
 map_aname.3:
-	.asciz	"Xamarin.AndroidX.CardView"
-	.size	map_aname.3, 26
+	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModel"
+	.size	map_aname.3, 37
 
 	.type	map_aname.4, %object
 map_aname.4:
-	.asciz	"Xamarin.AndroidX.SwipeRefreshLayout"
-	.size	map_aname.4, 36
+	.asciz	"Xamarin.AndroidX.CardView"
+	.size	map_aname.4, 26
 
 	.type	map_aname.5, %object
 map_aname.5:
-	.asciz	"Xamarin.AndroidX.Loader"
-	.size	map_aname.5, 24
+	.asciz	"Xamarin.AndroidX.SwipeRefreshLayout"
+	.size	map_aname.5, 36
 
 	.type	map_aname.6, %object
 map_aname.6:
-	.asciz	"Assesstment.Android"
-	.size	map_aname.6, 20
+	.asciz	"Xamarin.AndroidX.Loader"
+	.size	map_aname.6, 24
 
 	.type	map_aname.7, %object
 map_aname.7:
@@ -97,8 +97,8 @@ map_aname.18:
 
 	.type	map_aname.19, %object
 map_aname.19:
-	.asciz	"Mono.Android"
-	.size	map_aname.19, 13
+	.asciz	"Assesstment.Android"
+	.size	map_aname.19, 20
 
 	.type	map_aname.20, %object
 map_aname.20:

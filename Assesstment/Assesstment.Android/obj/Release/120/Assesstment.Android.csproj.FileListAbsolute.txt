@@ -466,3 +466,4 @@ C:\Working\Assesstment\Assesstment\Assesstment.Android\obj\Release\120\stamp\_Co
 C:\Working\Assesstment\Assesstment\Assesstment.Android\obj\Release\120\stamp\_GenerateJavaStubs.stamp
 C:\Working\Assesstment\Assesstment\Assesstment.Android\obj\Release\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Working\Assesstment\Assesstment\Assesstment.Android\obj\Release\120\stamp\_ResolveLibraryProjectImports.stamp
+C:\Working\Assesstment\Assesstment\Assesstment.Android\bin\Release\Images\GeneralImages\cart.png

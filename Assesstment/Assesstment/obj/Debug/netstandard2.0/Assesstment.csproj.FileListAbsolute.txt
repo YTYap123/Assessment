@@ -14,3 +14,4 @@ C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\refint\A
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.pdb
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\ref\Assesstment.dll
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Views\CatalogView.xaml.g.cs
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\cart.png

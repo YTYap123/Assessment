@@ -18,7 +18,7 @@ namespace Assesstment.Functions
 
 
         #region Catalog Web Service
-        public static async Task<ObservableCollection<CatalogData>> retrieveCatalogData()
+        public static async Task<ObservableCollection<CatalogDataModel>> retrieveCatalogData()
         {
             try
             {
@@ -50,7 +50,7 @@ namespace Assesstment.Functions
                         Total_Page = Convert.ToInt32(headerValues.FirstOrDefault());
                     }
 
-                    var dt = JsonConvert.DeserializeObject<ObservableCollection<CatalogData>>(contents);
+                    var dt = JsonConvert.DeserializeObject<ObservableCollection<CatalogDataModel>>(contents);
 
                     return dt;
                 }

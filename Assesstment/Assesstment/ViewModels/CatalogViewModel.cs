@@ -12,7 +12,7 @@ namespace Assesstment.ViewModels
     public class CatalogViewModel : ViewModelBase
     {
         #region Variables
-        public ObservableCollection<CatalogData> catalogData { get; set; } = new ObservableCollection<CatalogData>();
+        public ObservableCollection<CatalogDataModel> catalogData { get; set; } = new ObservableCollection<CatalogDataModel>();
 
         public string testing { get; set; } = "asd";
         #endregion
