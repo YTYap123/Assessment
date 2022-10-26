@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assesstment.Views.CartView"
+             x:Name="Cart"
+             
+             xmlns:Control="clr-namespace:Assesstment.Controls"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             
+             BackgroundColor="#f8f8f8">
+
+    <Grid RowDefinitions="auto, *, auto"
+          RowSpacing="0">
+
+        <!--Header View-->
+        <Frame Grid.Row="0"
+               Padding="5"
+               CornerRadius="0"
+               BackgroundColor="#275faa"
+               HasShadow="False">
+            <AbsoluteLayout>
+                <Image AbsoluteLayout.LayoutFlags="PositionProportional"
+                             AbsoluteLayout.LayoutBounds="0.03,0"
+                             BackgroundColor="Transparent"
+                             Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.back_arrow.png}"
+                             HeightRequest="26"
+                             WidthRequest="26">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                
+                <Label AbsoluteLayout.LayoutFlags="PositionProportional"
+                       AbsoluteLayout.LayoutBounds="0.5,0.5"
+                       Text="Shopping Cart"
+                       HorizontalOptions="Center"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       TextColor="White"/>
+            </AbsoluteLayout>
+        </Frame>
+        
+        <!--Cart List-->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding cartModel}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 
+                                 Span="1"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame Padding="10,5,10,5"
+                               Margin="0,5,0,5"
+                               HasShadow="False">
+                            <Grid ColumnDefinitions="auto,auto,*"
+                                  ColumnSpacing="0">
+
+                                <!--Product Image-->
+                                <Grid Grid.Column="1"
+                                      RowDefinitions="auto,*">
+                                    <ffimageloading:CachedImage Grid.Row="0"
+                                           HeightRequest="72"
+                                           WidthRequest="96"
+                                           Source="{Binding catalogModel.images[0].src}"/>
+                                </Grid>
+                                
+                                <!--Product Name & Product Unit & Product Price-->
+                                <Grid Grid.Column="2"
+                                      RowDefinitions="auto,auto,auto">
+                                    
+                                    <!--Product Name-->
+                                    <Label Grid.Row="0"
+                                           LineBreakMode="TailTruncation"
+                                           Text="{Binding catalogModel.name}"
+                                           FontSize="12"
+                                           TextColor="Black"/>
+
+                                    <!--Product Unit-->
+                                    <Frame Grid.Row="1"
+                                           HorizontalOptions="Start"
+                                           Padding="3"
+                                           BackgroundColor="#f8f8f8"
+                                           HasShadow="False">
+                                        <Label Grid.Row="1"
+                                           Text="{Binding catalogModel.product_unit}"
+                                           FontSize="10"
+                                           TextColor="Gray"/>
+                                    </Frame>
+
+                                    <!--Product Price-->
+                                    <Grid Grid.Row="2"
+                                          ColumnDefinitions="*,auto">
+                                        <Label Grid.Column="0"
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Center"
+                                           Text="{Binding catalogModel.product_price}"
+                                           FontSize="13"
+                                           TextColor="#275faa"
+                                           FontAttributes="Bold"/>
+
+                                        <Grid Grid.Column="1"
+                                              HorizontalOptions="End"
+                                              ColumnDefinitions="*,*,*"
+                                              ColumnSpacing="0">
+                                            <Frame Grid.Column="0"
+                                                   Padding="8,5,8,5"
+                                                   HasShadow="False"
+                                                   BackgroundColor="#f8f8f8">
+                                                <Image HeightRequest="10"
+                                                       WidthRequest="10"
+                                                       Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.minus.png}"/>
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.SubtractQuantityCommand, Source={x:Reference Cart}}"
+                                                                            CommandParameter="{Binding .}"/>
+                                                </Frame.GestureRecognizers>
+                                            </Frame>
+                                            <Frame Grid.Column="1"
+                                                   Padding="5"
+                                                   HasShadow="False">
+                                                <Label HorizontalOptions="Center"
+                                                       VerticalOptions="Center"
+                                                       Text="{Binding Quantity, Mode=TwoWay}"
+                                                       FontSize="12"/>
+                                            </Frame>
+                                            <Frame Grid.Column="2"
+                                                   Padding="8,5,8,5"
+                                                   HasShadow="False"
+                                                   BackgroundColor="#f8f8f8">
+                                                <Image HeightRequest="10"
+                                                       WidthRequest="10"
+                                                       Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.plus.png}"/>
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.AddQuantityCommand, Source={x:Reference Cart}}"
+                                                                            CommandParameter="{Binding .}"/>
+                                                </Frame.GestureRecognizers>
+                                            </Frame>
+                                        </Grid>
+                                    </Grid>
+                                    
+                                </Grid>
+                                
+                            </Grid>
+                            
+                            
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <!--Footer View-->
+        <Frame Grid.Row="2"
+               Padding="10,5,10,5"
+               CornerRadius="0"
+               BackgroundColor="White"
+               HasShadow="False">
+
+            <Grid ColumnDefinitions="auto, *">
+
+                <Grid Grid.Column="0"
+                      RowDefinitions="auto,auto">
+                    
+                    <!--Total Cart Price-->
+                    <Label Grid.Row="0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Total: "
+                              FontSize="14"
+                              TextColor="Black"/>
+                                <Span Text="{Binding TotalCartPrice_string, Mode=TwoWay}"
+                              FontSize="14"
+                              TextColor="#275faa"
+                              FontAttributes="Bold"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <!--Free Shipping-->
+                    <Grid Grid.Row="1"
+                          ColumnDefinitions="auto,auto"
+                          ColumnSpacing="10">
+                        <Image Grid.Column="0"
+                               HeightRequest="24"
+                               WidthRequest="24"
+                               Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.free_shipping.png}"/>
+
+                        <Label Grid.Column="1"
+                               VerticalOptions="Center"
+                               Text="Free Shipping"
+                               FontSize="10"
+                               TextColor="Gray"/>
+                    </Grid>
+                </Grid>
+                
+                
+                <!--Check Out-->
+                <Frame Grid.Column="1"
+                       Margin="10,0,0,0"
+                       Padding="0"
+                       CornerRadius="20"
+                       HasShadow="False"
+                       BackgroundColor="DarkOrange">
+                    <Label Text="Check Out"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Margin="10"
+                           FontSize="14"
+                           TextColor="White"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CheckOutCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            
+                
+        </Frame>
+    </Grid>
+</ContentPage>

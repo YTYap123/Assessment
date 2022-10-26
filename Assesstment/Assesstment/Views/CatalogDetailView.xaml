@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assesstment.Views.CatalogDetailView"
+             
+             xmlns:Control="clr-namespace:Assesstment.Controls"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="*, auto">
+        <Grid Grid.Row="0"
+              RowDefinitions="auto, *">
+            <AbsoluteLayout Grid.Row="0">
+                <ffimageloading:CachedImage AbsoluteLayout.LayoutFlags="All"
+                                            AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                    Margin="0,10,0,10"
+                                    HeightRequest="256"
+                                    Source="{Binding CatalogModel.images[0].src}"/>
+
+                <Frame AbsoluteLayout.LayoutFlags="PositionProportional"
+                       AbsoluteLayout.LayoutBounds="0.03, 0.06"
+                       Padding="0"
+                       CornerRadius="20"
+                       BackgroundColor="#bdbdbd"
+                       Opacity="0.5"
+                       HasShadow="False">
+                    <Image HeightRequest="26"
+                           WidthRequest="26"
+                           Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.back_arrow.png}"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </AbsoluteLayout>
+            
+
+            <!--Product Name & Product Price & Product Tag-->
+            <Grid Grid.Row="1"
+              RowDefinitions="auto, auto"
+              BackgroundColor="#f8f8f8"
+              RowSpacing="10">
+
+                <Grid Grid.Row="0"
+                  Padding="10,0,10,10"
+                  RowDefinitions="auto,auto,auto"
+                  BackgroundColor="White">
+
+                    <!--Name-->
+                    <Label Grid.Row="0"
+                   Text="{Binding CatalogModel.name}"
+                   TextColor="Black"
+                   FontSize="14"/>
+
+                    <!--Product Price-->
+                    <Label Grid.Row="1"
+                   Text="{Binding CatalogModel.product_price}"
+                   TextColor="#275faa"
+                   FontAttributes="Bold"
+                   FontSize="16"/>
+
+                    <!--Product Tag-->
+                    <Grid Grid.Row="2"
+                  ColumnDefinitions="auto,*">
+                        <Frame Grid.Column="0"
+                        Padding="3,1,3,1"
+                        CornerRadius="0"
+                        BackgroundColor="Transparent"
+                        BorderColor="#275faa"
+                        HasShadow="False">
+                            <Label VerticalOptions="Center"
+                            LineBreakMode="TailTruncation"
+                            Text="{Binding CatalogModel.product_tag}"
+                            FontSize="10"
+                            TextColor="#275faa"/>
+                        </Frame>
+                    </Grid>
+                </Grid>
+
+                <!--Product Variation-->
+                <Grid Grid.Row="1"
+                  Padding="10"
+                  RowDefinitions="auto,auto,1,auto,auto"
+                  BackgroundColor="White">
+                    <Grid Grid.Row="0"
+                      ColumnDefinitions="auto,*">
+                        <Label Grid.Column="0"
+                       Text="Variations"
+                       TextColor="Black"
+                       FontSize="14"
+                       FontAttributes="Bold"/>
+
+                        <Grid Grid.Column="1"
+                          HorizontalOptions="End"
+                          ColumnDefinitions="*,auto"
+                          ColumnSpacing="0">
+
+                            <Label Grid.Column="0"
+                               VerticalOptions="Center"
+                               Text="1 Variation"
+                               TextColor="#CCCCCC"
+                               FontSize="12"/>
+
+                            <Image Grid.Column="1"
+                               VerticalOptions="Center"
+                                HeightRequest="26"
+                                WidthRequest="26"
+                                Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.forward.png}"/>
+                        </Grid>
+                    </Grid>
+
+                    <!--Variation Image-->
+                    <Frame Grid.Row="1"
+                       Padding="0"
+                       Margin="0,5,0,5"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                           BorderColor="#275faa"
+                           HasShadow="False"
+                           CornerRadius="3">
+                        <ffimageloading:CachedImage Margin="2,3,2,3"
+                                            HeightRequest="52"
+                                                WidthRequest="48"
+                                            Source="{Binding CatalogModel.images[0].src}"/>
+                    </Frame>
+
+
+                    <!--Separator-->
+                    <BoxView Grid.Row="2"
+                                BackgroundColor="#f7f7f7"/>
+                    
+                    
+                    <!--Unit-->
+                    <Grid Grid.Row="3"
+                          Margin="0,5,0,0"
+                          RowDefinitions="auto, auto">
+
+                        <Label Grid.Row="0"
+                               VerticalOptions="Center"
+                               Text="Unit"
+                               TextColor="Black"
+                               FontSize="12"
+                               FontAttributes="Bold"/>
+
+                        <Frame Grid.Row="1"
+                               HorizontalOptions="Start"
+                               Padding="0"
+                               HasShadow="False"
+                               BorderColor="#275faa"
+                               CornerRadius="3">
+                            <Label Grid.Row="0"
+                                   Margin="15,3,15,3"
+                               VerticalOptions="Center"
+                               Text="{Binding CatalogModel.product_unit}"
+                               TextColor="#275faa"
+                               FontSize="10"/>
+                        </Frame>
+                    </Grid>
+
+                    <!--Quantity-->
+                    <Grid Grid.Row="4"
+                          Margin="0,5,0,0"
+                          ColumnDefinitions="auto, *">
+
+                        <Label Grid.Column="0"
+                               VerticalOptions="Center"
+                               Text="Quantity"
+                               TextColor="Black"
+                               FontSize="12"
+                               FontAttributes="Bold"/>
+
+                        <Grid Grid.Column="1"
+                              HorizontalOptions="End"
+                              ColumnDefinitions="*,*,*"
+                              ColumnSpacing="0">
+                            <Frame Grid.Column="0"
+                                   Padding="8,5,8,5"
+                                   HasShadow="False"
+                                   BackgroundColor="#f8f8f8">
+                                <Image HeightRequest="10"
+                                       WidthRequest="10"
+                                       Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.minus.png}"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SubtractQuantityCommand}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame Grid.Column="1"
+                                   Padding="5"
+                                   HasShadow="False">
+                                <Label HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       Text="{Binding Quantity, Mode=TwoWay}"
+                                       FontSize="12"/>
+                            </Frame>
+                            <Frame Grid.Column="2"
+                                   Padding="8,5,8,5"
+                                   HasShadow="False"
+                                   BackgroundColor="#f8f8f8">
+                                <Image HeightRequest="10"
+                                       WidthRequest="10"
+                                       Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.plus.png}"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding AddQuantityCommand}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        
+        <!--Footer-->
+        <Grid Grid.Row="1"
+              Margin="10,5,10,10"
+              ColumnDefinitions="auto,*">
+            
+            <!--Store & Chat-->
+            <Grid Grid.Column="0"
+                  VerticalOptions="Center"
+                  ColumnDefinitions="auto,auto,auto"
+                  ColumnSpacing="20">
+                
+                <!--Store-->
+                <Grid Grid.Column="0"
+                      RowDefinitions="auto,auto"
+                      RowSpacing="0">
+                    <Image Grid.Row="0"
+                           HorizontalOptions="Center"
+                           HeightRequest="26"
+                           WidthRequest="26"
+                           Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.store.png}"/>
+                    <Label Grid.Row="1"
+                           HorizontalOptions="Center"
+                            Text="Store"
+                            TextColor="#CCCCCC"
+                            FontSize="10"/>
+                </Grid>
+                
+                <!--Separator-->
+                <BoxView Grid.Column="1"
+                         WidthRequest="1"
+                         BackgroundColor="#CCCCCC"/>
+
+                <!--Chat-->
+                <Grid Grid.Column="2"
+                      RowDefinitions="auto,auto"
+                      RowSpacing="0">
+                    <Image Grid.Row="0"
+                           HorizontalOptions="Center"
+                           HeightRequest="26"
+                           WidthRequest="26"
+                           Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.chat.png}"/>
+                    <Label Grid.Row="1"
+                           HorizontalOptions="Center"
+                            Text="Chat"
+                            TextColor="#CCCCCC"
+                            FontSize="10"/>
+                </Grid>
+
+            </Grid>
+            
+            
+            
+            <!--Buy Now & Add To Cart-->
+            <Grid Grid.Column="1"
+                  Padding="10,0,0,0"
+                  VerticalOptions="Center"
+                  ColumnDefinitions="*,*">
+                
+                <!--Buy Now-->
+                <Frame Grid.Column="0"
+                       Padding="0"
+                       CornerRadius="20"
+                       HasShadow="False"
+                       BackgroundColor="DarkOrange">
+                    <Label Text="Buy Now"
+                           HorizontalOptions="Center"
+                           Margin="10"
+                           FontSize="14"
+                           TextColor="White"/>
+                </Frame>
+
+                <!--Add to Cart-->
+                <Frame Grid.Column="1"
+                       Padding="0"
+                       CornerRadius="20"
+                       HasShadow="False"
+                       BackgroundColor="#275faa">
+                    <Label Text="Add to Cart"
+                           HorizontalOptions="Center"
+                           Margin="10"
+                           FontSize="14"
+                           TextColor="White"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddToCartCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -264,7 +264,77 @@ assembly_store_bundled_assemblies:
 	.quad	0x0	# config_data
 	.quad	0x0	# descriptor
 
-	.size	assembly_store_bundled_assemblies, 1376
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.quad	0x0	# image_data
+	.quad	0x0	# debug_info_data
+	.quad	0x0	# config_data
+	.quad	0x0	# descriptor
+
+	.size	assembly_store_bundled_assemblies, 1824
 	# Assembly store data
 
 	.type	assembly_stores, @object
@@ -297,121 +367,145 @@ dso_cache:
 	.quad	.L.autostr.13	# name: libmono-native.so
 	.quad	0x0	# handle
 
+	.quad	0x2c84184be8b423ce	# hash, from name: e_sqlite3.so
+	.byte	0x0	# ignore
+	.zero	7
+	.quad	.L.autostr.14	# name: libe_sqlite3.so
+	.quad	0x0	# handle
+
 	.quad	0x2d0a981995adda1a	# hash, from name: mono-btls-shared
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.14	# name: libmono-btls-shared.so
+	.quad	.L.autostr.15	# name: libmono-btls-shared.so
 	.quad	0x0	# handle
 
 	.quad	0x324e6d52264455c3	# hash, from name: libmono-native.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.15	# name: libmono-native.so
+	.quad	.L.autostr.16	# name: libmono-native.so
 	.quad	0x0	# handle
 
 	.quad	0x35e64c6c9f4b9e72	# hash, from name: libmono-btls-shared
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.16	# name: libmono-btls-shared.so
+	.quad	.L.autostr.17	# name: libmono-btls-shared.so
+	.quad	0x0	# handle
+
+	.quad	0x3de4b96a21c31961	# hash, from name: libe_sqlite3.so
+	.byte	0x0	# ignore
+	.zero	7
+	.quad	.L.autostr.18	# name: libe_sqlite3.so
 	.quad	0x0	# handle
 
 	.quad	0x65d94d818a60a3a7	# hash, from name: monodroid.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.17	# name: libmonodroid.so
+	.quad	.L.autostr.19	# name: libmonodroid.so
 	.quad	0x0	# handle
 
 	.quad	0x6b1a4fee66f8a525	# hash, from name: libxa-internal-api
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.18	# name: libxa-internal-api.so
+	.quad	.L.autostr.20	# name: libxa-internal-api.so
 	.quad	0x0	# handle
 
 	.quad	0x6b6b0562539657f0	# hash, from name: libmonosgen-2.0
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.19	# name: libmonosgen-2.0.so
+	.quad	.L.autostr.21	# name: libmonosgen-2.0.so
+	.quad	0x0	# handle
+
+	.quad	0x6f65df293440bc6c	# hash, from name: libe_sqlite3
+	.byte	0x0	# ignore
+	.zero	7
+	.quad	.L.autostr.22	# name: libe_sqlite3.so
 	.quad	0x0	# handle
 
 	.quad	0x74778f1b27881b01	# hash, from name: libmonodroid.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.20	# name: libmonodroid.so
+	.quad	.L.autostr.23	# name: libmonodroid.so
 	.quad	0x0	# handle
 
 	.quad	0x78600b2172b4e8ae	# hash, from name: mono-btls-shared.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.21	# name: libmono-btls-shared.so
+	.quad	.L.autostr.24	# name: libmono-btls-shared.so
+	.quad	0x0	# handle
+
+	.quad	0x7cdb81e9d80b5d2a	# hash, from name: e_sqlite3
+	.byte	0x0	# ignore
+	.zero	7
+	.quad	.L.autostr.25	# name: libe_sqlite3.so
 	.quad	0x0	# handle
 
 	.quad	0x7daaf3a073c44dd7	# hash, from name: monodroid
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.22	# name: libmonodroid.so
+	.quad	.L.autostr.26	# name: libmonodroid.so
 	.quad	0x0	# handle
 
 	.quad	0x819997bb1318c38f	# hash, from name: xa-internal-api.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.23	# name: libxa-internal-api.so
+	.quad	.L.autostr.27	# name: libxa-internal-api.so
 	.quad	0x0	# handle
 
 	.quad	0x8da9f07ad98f854a	# hash, from name: mono-native.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.24	# name: libmono-native.so
+	.quad	.L.autostr.28	# name: libmono-native.so
 	.quad	0x0	# handle
 
 	.quad	0x9fe56834a335f553	# hash, from name: libmonodroid
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.25	# name: libmonodroid.so
+	.quad	.L.autostr.29	# name: libmonodroid.so
 	.quad	0x0	# handle
 
 	.quad	0xb43ec55666e9bac2	# hash, from name: xa-internal-api
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.26	# name: libxa-internal-api.so
+	.quad	.L.autostr.30	# name: libxa-internal-api.so
 	.quad	0x0	# handle
 
 	.quad	0xb9af7500aad479f3	# hash, from name: libmono-btls-shared.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.27	# name: libmono-btls-shared.so
+	.quad	.L.autostr.31	# name: libmono-btls-shared.so
 	.quad	0x0	# handle
 
 	.quad	0xc82f57facf333f6a	# hash, from name: monosgen-2.0.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.28	# name: libmonosgen-2.0.so
+	.quad	.L.autostr.32	# name: libmonosgen-2.0.so
 	.quad	0x0	# handle
 
 	.quad	0xcd875618fc6f174a	# hash, from name: libxa-internal-api.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.29	# name: libxa-internal-api.so
+	.quad	.L.autostr.33	# name: libxa-internal-api.so
 	.quad	0x0	# handle
 
 	.quad	0xe156906e01e8a274	# hash, from name: libmono-native
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.30	# name: libmono-native.so
+	.quad	.L.autostr.34	# name: libmono-native.so
 	.quad	0x0	# handle
 
 	.quad	0xe7ff637b8de7a85b	# hash, from name: libmonosgen-2.0.so
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.31	# name: libmonosgen-2.0.so
+	.quad	.L.autostr.35	# name: libmonosgen-2.0.so
 	.quad	0x0	# handle
 
 	.quad	0xe935f11a41b02b22	# hash, from name: monosgen-2.0
 	.byte	0x0	# ignore
 	.zero	7
-	.quad	.L.autostr.32	# name: libmonosgen-2.0.so
+	.quad	.L.autostr.36	# name: libmonosgen-2.0.so
 	.quad	0x0	# handle
 
-	.size	dso_cache, 640
+	.size	dso_cache, 768
 
 	#
 	# Generated from instance of: Xamarin.Android.Tasks.ApplicationConfig, Xamarin.Android.Build.Tasks, Version=12.3.0.26, Culture=neutral, PublicKeyToken=84e04ff9cfb79065
@@ -436,13 +530,13 @@ application_config:
 	.long	0x3	# package_naming_policy
 	.long	0xc	# environment_variable_count
 	.long	0x0	# system_property_count
-	.long	0x2b	# number_of_assemblies_in_apk
+	.long	0x39	# number_of_assemblies_in_apk
 	.long	0x0	# bundled_assembly_name_width
 	.long	0x2	# number_of_assembly_store_files
-	.long	0x14	# number_of_dso_cache_entries
+	.long	0x18	# number_of_dso_cache_entries
 	.long	0x0	# mono_components_mask
 	.zero	4
-	.quad	.L.autostr.33	# android_package_name
+	.quad	.L.autostr.37	# android_package_name
 	.size	application_config, 56
 
 
@@ -479,7 +573,7 @@ application_config:
 
 	.type	.L.autostr.6, @object
 .L.autostr.6:
-	.asciz	"8c256c66-45c6-4bd7-961d-b6b058821bf3"
+	.asciz	"68a312b7-82cb-46f8-bd7c-69c2d9baf378"
 	.size	.L.autostr.6, 37
 
 	.type	.L.autostr.7, @object
@@ -489,8 +583,8 @@ application_config:
 
 	.type	.L.autostr.8, @object
 .L.autostr.8:
-	.asciz	"Xamarin.Android.Net.AndroidClientHandler"
-	.size	.L.autostr.8, 41
+	.asciz	"System.Net.Http.HttpClientHandler"
+	.size	.L.autostr.8, 34
 
 	.type	.L.autostr.9, @object
 .L.autostr.9:
@@ -519,93 +613,93 @@ application_config:
 
 	.type	.L.autostr.14, @object
 .L.autostr.14:
-	.asciz	"libmono-btls-shared.so"
-	.size	.L.autostr.14, 23
+	.asciz	"libe_sqlite3.so"
+	.size	.L.autostr.14, 16
 
 	.type	.L.autostr.15, @object
 .L.autostr.15:
-	.asciz	"libmono-native.so"
-	.size	.L.autostr.15, 18
+	.asciz	"libmono-btls-shared.so"
+	.size	.L.autostr.15, 23
 
 	.type	.L.autostr.16, @object
 .L.autostr.16:
-	.asciz	"libmono-btls-shared.so"
-	.size	.L.autostr.16, 23
+	.asciz	"libmono-native.so"
+	.size	.L.autostr.16, 18
 
 	.type	.L.autostr.17, @object
 .L.autostr.17:
-	.asciz	"libmonodroid.so"
-	.size	.L.autostr.17, 16
+	.asciz	"libmono-btls-shared.so"
+	.size	.L.autostr.17, 23
 
 	.type	.L.autostr.18, @object
 .L.autostr.18:
-	.asciz	"libxa-internal-api.so"
-	.size	.L.autostr.18, 22
+	.asciz	"libe_sqlite3.so"
+	.size	.L.autostr.18, 16
 
 	.type	.L.autostr.19, @object
 .L.autostr.19:
-	.asciz	"libmonosgen-2.0.so"
-	.size	.L.autostr.19, 19
+	.asciz	"libmonodroid.so"
+	.size	.L.autostr.19, 16
 
 	.type	.L.autostr.20, @object
 .L.autostr.20:
-	.asciz	"libmonodroid.so"
-	.size	.L.autostr.20, 16
+	.asciz	"libxa-internal-api.so"
+	.size	.L.autostr.20, 22
 
 	.type	.L.autostr.21, @object
 .L.autostr.21:
-	.asciz	"libmono-btls-shared.so"
-	.size	.L.autostr.21, 23
+	.asciz	"libmonosgen-2.0.so"
+	.size	.L.autostr.21, 19
 
 	.type	.L.autostr.22, @object
 .L.autostr.22:
-	.asciz	"libmonodroid.so"
+	.asciz	"libe_sqlite3.so"
 	.size	.L.autostr.22, 16
 
 	.type	.L.autostr.23, @object
 .L.autostr.23:
-	.asciz	"libxa-internal-api.so"
-	.size	.L.autostr.23, 22
+	.asciz	"libmonodroid.so"
+	.size	.L.autostr.23, 16
 
 	.type	.L.autostr.24, @object
 .L.autostr.24:
-	.asciz	"libmono-native.so"
-	.size	.L.autostr.24, 18
+	.asciz	"libmono-btls-shared.so"
+	.size	.L.autostr.24, 23
 
 	.type	.L.autostr.25, @object
 .L.autostr.25:
-	.asciz	"libmonodroid.so"
+	.asciz	"libe_sqlite3.so"
 	.size	.L.autostr.25, 16
 
 	.type	.L.autostr.26, @object
 .L.autostr.26:
-	.asciz	"libxa-internal-api.so"
-	.size	.L.autostr.26, 22
+	.asciz	"libmonodroid.so"
+	.size	.L.autostr.26, 16
 
 	.type	.L.autostr.27, @object
 .L.autostr.27:
-	.asciz	"libmono-btls-shared.so"
-	.size	.L.autostr.27, 23
+	.asciz	"libxa-internal-api.so"
+	.size	.L.autostr.27, 22
 
 	.type	.L.autostr.28, @object
 .L.autostr.28:
-	.asciz	"libmonosgen-2.0.so"
-	.size	.L.autostr.28, 19
+	.asciz	"libmono-native.so"
+	.size	.L.autostr.28, 18
 
 	.type	.L.autostr.29, @object
 .L.autostr.29:
-	.asciz	"libxa-internal-api.so"
-	.size	.L.autostr.29, 22
+	.asciz	"libmonodroid.so"
+	.size	.L.autostr.29, 16
 
 	.type	.L.autostr.30, @object
 .L.autostr.30:
-	.asciz	"libmono-native.so"
-	.size	.L.autostr.30, 18
+	.asciz	"libxa-internal-api.so"
+	.size	.L.autostr.30, 22
 
 	.type	.L.autostr.31, @object
 .L.autostr.31:
-	.asciz	"libmonosgen-2.0.so"
-	.size	.L.autostr.31, 19
+	.asciz	"libmono-btls-shared.so"
+	.size	.L.autostr.31, 23
 
 	.type	.L.autostr.32, @object
 .L.autostr.32:
@@ -614,8 +708,28 @@ application_config:
 
 	.type	.L.autostr.33, @object
 .L.autostr.33:
+	.asciz	"libxa-internal-api.so"
+	.size	.L.autostr.33, 22
+
+	.type	.L.autostr.34, @object
+.L.autostr.34:
+	.asciz	"libmono-native.so"
+	.size	.L.autostr.34, 18
+
+	.type	.L.autostr.35, @object
+.L.autostr.35:
+	.asciz	"libmonosgen-2.0.so"
+	.size	.L.autostr.35, 19
+
+	.type	.L.autostr.36, @object
+.L.autostr.36:
+	.asciz	"libmonosgen-2.0.so"
+	.size	.L.autostr.36, 19
+
+	.type	.L.autostr.37, @object
+.L.autostr.37:
 	.asciz	"com.companyname.assesstment"
-	.size	.L.autostr.33, 28
+	.size	.L.autostr.37, 28
 
 
 	.ident	"Xamarin.Android remotes/origin/d17-2 @ bbba5a21f3b649a761b22d83959758b4d30df672"

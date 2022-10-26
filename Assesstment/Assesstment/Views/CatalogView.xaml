@@ -1,16 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assesstment.Views.CatalogView"
+             x:Name="Catalog"
              
              xmlns:ViewModel="clr-namespace:Assesstment.ViewModels"
              xmlns:Control="clr-namespace:Assesstment.Controls"
-             x:Class="Assesstment.Views.CatalogView"
-             BackgroundColor="#eeeeee">
-    
-    <ContentPage.BindingContext>
-        <ViewModel:CatalogViewModel/>
-    </ContentPage.BindingContext>
+             xmlns:Converter="clr-namespace:Assesstment.Converters"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             
+             BackgroundColor="#f8f8f8">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:isPromotionColorConverter x:Key="isPromotionColorConverter"/>
+
+            <DataTemplate x:Key="CatalogLazyCollectionViewTemplate">
+                <Grid ColumnDefinitions="*,*">
+                    <Frame Grid.Column="0"
+                           HeightRequest="156"
+                           Padding="5"
+                           Margin="5"
+                           HasShadow="False"
+                           CornerRadius="10">
+
+                        <Grid RowDefinitions="auto,*">
+
+                            <Control:LoadingBoxView Grid.Row="0"
+                                 HeightRequest="96"
+                                 WidthRequest="96"
+                                 CornerRadius="10"
+                                 BackgroundColor="#E4E4E4"/>
+
+                            <Grid Grid.Row="1"
+                                  Margin="0,5,0,0"
+                                VerticalOptions="Start"
+                                RowDefinitions="auto,auto"
+                                RowSpacing="8">
+
+                                <Control:LoadingBoxView Grid.Row="0"
+                                     HeightRequest="16"
+                                     WidthRequest="128"
+                                     CornerRadius="4"
+                                     VerticalOptions="Center"
+                                     BackgroundColor="#E4E4E4"/>
+
+                                <Grid Grid.Row="1"
+                                      ColumnDefinitions="auto, *">
+                                    <Control:LoadingBoxView Grid.Column="0"
+                                        HeightRequest="16"
+                                        WidthRequest="96"
+                                        CornerRadius="4"
+                                        VerticalOptions="Center"
+                                        BackgroundColor="#E4E4E4"/>
+                                </Grid>
+                                
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Column="1"
+                           HeightRequest="156"
+                           Padding="5"
+                           Margin="5"
+                           HasShadow="False"
+                           CornerRadius="10">
+
+                        <Grid RowDefinitions="auto,*">
+
+                            <Control:LoadingBoxView Grid.Row="0"
+                                 HeightRequest="96"
+                                 WidthRequest="96"
+                                 CornerRadius="10"
+                                 BackgroundColor="#E4E4E4"/>
+
+                            <Grid Grid.Row="1"
+                                  Margin="0,5,0,0"
+                                VerticalOptions="Start"
+                                RowDefinitions="auto,auto"
+                                RowSpacing="8">
+
+                                <Control:LoadingBoxView Grid.Row="0"
+                                     HeightRequest="16"
+                                     WidthRequest="128"
+                                     CornerRadius="4"
+                                     VerticalOptions="Center"
+                                     BackgroundColor="#E4E4E4"/>
+
+                                <Grid Grid.Row="1"
+                                      ColumnDefinitions="auto, *">
+                                    <Control:LoadingBoxView Grid.Column="0"
+                                        HeightRequest="16"
+                                        WidthRequest="96"
+                                        CornerRadius="4"
+                                        VerticalOptions="Center"
+                                        BackgroundColor="#E4E4E4"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <Grid RowDefinitions="auto, *"
           RowSpacing="0">
         
@@ -18,7 +112,8 @@
         <Frame Grid.Row="0"
                Padding="5"
                CornerRadius="0"
-               BackgroundColor="#275faa">
+               BackgroundColor="#275faa"
+               HasShadow="False">
             <AbsoluteLayout>
                 <Label AbsoluteLayout.LayoutFlags="PositionProportional"
                        AbsoluteLayout.LayoutBounds="0.5,0.5"
@@ -28,116 +123,124 @@
                        FontAttributes="Bold"
                        TextColor="White"/>
 
-                <Image AbsoluteLayout.LayoutFlags="PositionProportional"
-                       AbsoluteLayout.LayoutBounds="0.97,0"
-                       BackgroundColor="Transparent"
+                <Grid AbsoluteLayout.LayoutFlags="PositionProportional"
+                      AbsoluteLayout.LayoutBounds="0.97,0">
+
+                    <xct:BadgeView BadgePosition="TopRight"
+                                   AutoHide="True"
+                                   Text="{Binding Total_Cart, Mode=TwoWay}"
+                                   FontSize="8"
+                                   TextColor="White"
+                                   BackgroundColor="Red">
+                        <Image BackgroundColor="Transparent"
                        Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.GeneralImages.cart.png}"
                        HeightRequest="26"
-                       WidthRequest="26">
-                </Image>
+                       WidthRequest="26"/>
+                    </xct:BadgeView>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CartCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+                
             </AbsoluteLayout>
         </Frame>
 
         <!--Catalog View-->
-        <CollectionView Grid.Row="1"
-                        ItemsSource="{Binding catalogData}">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical"
-                                   ItemSpacing="0"/>
-            </CollectionView.ItemsLayout>
-            
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="5,5,5,5">
-                        <Frame Padding="5,5,10,5"
-                               HasShadow="False"
-                               CornerRadius="10">
-                            <Grid ColumnDefinitions="auto,*">
-                                <Image Grid.Column="0"
-                                       HeightRequest="96"
-                                       WidthRequest="96"
-                                       Source="{Binding images[0].src}"/>
+        <StackLayout Grid.Row="1"
+                     xct:StateLayout.CurrentState="{Binding CurrentState}"
+                     xct:StateLayout.AnimateStateChanges="False">
 
-                                <Grid Grid.Column="1"
-                                      VerticalOptions="Center"
-                                      RowDefinitions="auto,auto"
-                                      RowSpacing="20">
-                                    
-                                    <!--Product Name-->
-                                    <Label Grid.Row="0"
-                                       VerticalOptions="Center"
-                                       Text="{Binding name}"
-                                       FontSize="12"
-                                       FontAttributes="Bold"
-                                       TextColor="Black"/>
+            <xct:StateLayout.StateViews>
+                <xct:StateView StateKey="Loading"
+                               RepeatCount="4"
+                               Template="{StaticResource CatalogLazyCollectionViewTemplate}">
+                </xct:StateView>
+            </xct:StateLayout.StateViews>
 
-                                    <!--Product Price & Add to Cart-->
+
+            <CollectionView ItemsSource="{Binding catalogModel}"
+                            RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}"
+                            RemainingItemsThreshold="{Binding ItemThreshold}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame Padding="5,5,10,5"
+                                   Margin="5"
+                                   HasShadow="False"
+                                   CornerRadius="10">
+                                <Grid RowDefinitions="auto,*">
+                                    <ffimageloading:CachedImage Grid.Row="0"
+                                           HeightRequest="96"
+                                           WidthRequest="96"
+                                           Source="{Binding images[0].src}"/>
+
+
                                     <Grid Grid.Row="1"
-                                          RowDefinitions="auto, auto"
-                                          RowSpacing="0">
-                                        
+                                      VerticalOptions="Start"
+                                      RowDefinitions="auto,auto,auto">
+
+                                        <!--Name-->
                                         <Label Grid.Row="0"
+                                               HeightRequest="32"
+                                               LineBreakMode="TailTruncation"
+                                               MaxLines="2"
                                                VerticalOptions="Center"
-                                               Text="RM 45.00"
-                                               FontSize="14"
-                                               FontAttributes="Bold"
-                                               TextColor="#275faa"/>
+                                               Text="{Binding name}"
+                                               FontSize="11"
+                                               TextColor="Black"/>
 
+                                        <!--Product Tag-->
                                         <Grid Grid.Row="1"
-                                              HorizontalOptions="End"
-                                              ColumnDefinitions="auto, auto, auto, auto">
-
-                                            <Label Grid.Column="0"
-                                                   VerticalOptions="Center"
-                                                    Text="-"
-                                                    FontSize="14"
-                                                    TextColor="Black"
-                                                   FontAttributes="Bold"/>
-
-                                            <Frame Grid.Column="1"
-                                                   VerticalOptions="Center"
-                                                   Padding="5,2,5,2"
-                                                   CornerRadius="5"
-                                                   WidthRequest="25"
-                                                   HasShadow="False"
-                                                   BorderColor="Gray">
-                                                <Label Text="99"
-                                                       HorizontalOptions="Center"
-                                                        FontSize="12"
-                                                        TextColor="Black"/>
-                                            </Frame>
-                                            
-
-                                            <Label Grid.Column="2"
-                                                   VerticalOptions="Center"
-                                                    Text="+"
-                                                    FontSize="14"
-                                                    TextColor="Black"
-                                                   FontAttributes="Bold"/>
-
-
-                                            <Frame Grid.Column="3"
-                                                   Margin="10,0,0,0"
-                                                    VerticalOptions="Center"
-                                                    Padding="5,2,5,2"
-                                                    CornerRadius="10"
-                                                    HasShadow="False"
-                                                    BackgroundColor="#275faa">
-                                            <Label Text="Add To Cart"
-                                                    FontSize="10"
-                                                    FontAttributes="Bold"
-                                                    TextColor="White"/>
+                                              ColumnDefinitions="auto,*">
+                                            <Frame Grid.Column="0"
+                                                   Padding="3,1,3,1"
+                                                   CornerRadius="0"
+                                                   BackgroundColor="Transparent"
+                                                   BorderColor="{Binding isPromotion, Converter={StaticResource isPromotionColorConverter}}"
+                                                   HasShadow="False">
+                                                <Label VerticalOptions="Center"
+                                                       LineBreakMode="TailTruncation"
+                                                       Text="{Binding product_tag}"
+                                                       FontSize="10"
+                                                       TextColor="{Binding isPromotion, Converter={StaticResource isPromotionColorConverter}}"/>
                                             </Frame>
                                         </Grid>
+
+                                        <!--Regular Price-->
+                                        <Label Grid.Row="2"
+                                               HeightRequest="15"
+                                               VerticalOptions="Center"
+                                               Text="{Binding product_price}"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               TextColor="#275faa"/>
                                     </Grid>
                                 </Grid>
-                                
-                            </Grid>
-                        </Frame>
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.ProductTappedCommand, Source={x:Reference Catalog}}"
+                                                          CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+                <CollectionView.Footer>
+                    <StackLayout IsVisible="{Binding IsLoadingMore}">
+                        <ActivityIndicator HeightRequest="26"
+                                           WidthRequest="26"
+                                           IsRunning="{Binding IsLoadingMore}"
+                                           Color="#275faa"/>
                     </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                </CollectionView.Footer>
+            </CollectionView>
+        </StackLayout>
     </Grid>
     
 </ContentPage>

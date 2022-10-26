@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assesstment.Views.LoginView"
+             
+             xmlns:Control="clr-namespace:Assesstment.Controls"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="1,0">
+            <GradientStop Color="#275faa"
+                          Offset="0.1"/>
+            <GradientStop Color="#5299f1"
+                          Offset="1.0"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid RowDefinitions="auto, *">
+        
+        <!--Sign In Label-->
+        <Grid Grid.Row="0"
+              Padding="0,100,0,0"
+              Margin="0,0,0,80"
+              HorizontalOptions="Center"
+              VerticalOptions="Center"
+              RowDefinitions="auto,auto">
+            <Label Grid.Row="0"
+                   HorizontalOptions="Center"
+                   Text="SIGN IN"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White"/>
+            <Label Grid.Row="1"
+                   Text="Please sign in with email or phone number"
+                   FontSize="12"
+                   TextColor="White"/>
+        </Grid>
+
+        <!--Sign In Button-->
+        <yummy:PancakeView Grid.Row="1"
+                           CornerRadius="30,30,0,0"
+                           BackgroundColor="White">
+
+            <Grid RowDefinitions="auto,auto,*"
+                  Padding="20,25,20,10">
+                
+                <!--Boostorder Vertical Icon-->
+                <Image Grid.Row="0"
+                       HeightRequest="72"
+                       WidthRequest="72"
+                       Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.IconImages.boostorder_vertical_icon.png}"/>
+                
+                
+                <!--Sign In With Email & Phone Button-->
+                <Grid Grid.Row="1"
+                      Padding="30,40,30,0"
+                      RowDefinitions="auto,auto"
+                      RowSpacing="15">
+                    <Frame Grid.Row="0"
+                           Padding="5,10,5,10"
+                           CornerRadius="10"
+                           HasShadow="False">
+                        <Frame.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#83d38c"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#74caad"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <Label HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Text="SIGN IN WITH EMAIL"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SignInCommand}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame Grid.Row="1"
+                           Padding="5,10,5,10"
+                           CornerRadius="10"
+                           HasShadow="False">
+                        <Frame.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#83d38c"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#74caad"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <Label HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Text="SIGN IN WITH PHONE"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SignInCommand}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+
+                <!--Boostorder Horizontal Icon-->
+                <Image Grid.Row="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"
+                       HeightRequest="78"
+                       WidthRequest="96"
+                       Source="{Control:EmbeddedImage ResourceID=Assesstment.Images.IconImages.boostorder_horizontal_icon.png}"/>
+            </Grid>
+        </yummy:PancakeView>
+    </Grid>
+</ContentPage>

@@ -1,3 +1,13 @@
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\back_arrow.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\cart.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\chat.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\forward.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\free_shipping.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\minus.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\plus.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\store.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\IconImages\boostorder_horizontal_icon.png
+C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\IconImages\boostorder_vertical_icon.png
 C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Assesstment.deps.json
 C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Assesstment.dll
 C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Assesstment.pdb
@@ -5,6 +15,11 @@ C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstm
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.GeneratedMSBuildEditorConfig.editorconfig
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Views\CartView.xaml.g.cs
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Views\CatalogDetailView.xaml.g.cs
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Views\CatalogView.xaml.g.cs
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Views\LoginView.xaml.g.cs
+C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Views\StartupViews\SplashScreenView.xaml.g.cs
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.AssemblyInfoInputs.cache
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.AssemblyInfo.cs
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.csproj.CoreCompileInputs.cache
@@ -13,5 +28,3 @@ C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstm
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\refint\Assesstment.dll
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Assesstment.pdb
 C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\ref\Assesstment.dll
-C:\Working\Assesstment\Assesstment\Assesstment\obj\Debug\netstandard2.0\Views\CatalogView.xaml.g.cs
-C:\Working\Assesstment\Assesstment\Assesstment\bin\Debug\netstandard2.0\Images\GeneralImages\cart.png

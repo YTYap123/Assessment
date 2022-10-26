@@ -13,12 +13,12 @@ namespace Assesstment.Functions
 {
     public class GlobalWebServiceFunction
     {
-        static int Total_Product { get; set; } = 0;
-        static int Total_Page { get; set; } = 0;
+        public static int Total_CatalogProduct { get; set; } = 0;
+        public static int Total_CatalogPage { get; set; } = 0;
 
 
         #region Catalog Web Service
-        public static async Task<ObservableCollection<CatalogDataModel>> retrieveCatalogData()
+        public static async Task<ObservableCollection<CatalogModel>> GetCatalog(int pageNum)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace Assesstment.Functions
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
 
-                Uri URIPath = new Uri("https://mangomart-autocount.myboostorder.com/wp-json/wc/v1/products?Page=1");
+                Uri URIPath = new Uri("https://mangomart-autocount.myboostorder.com/wp-json/wc/v1/products?page=" + pageNum.ToString());
 
                 HttpResponseMessage response = await client.GetAsync(URIPath);
 
@@ -41,16 +41,16 @@ namespace Assesstment.Functions
                     //Get Total Number Of Products
                     if(response.Headers.TryGetValues("X-WP-Total", out headerValues))
                     {
-                        Total_Product = Convert.ToInt32(headerValues.FirstOrDefault());
+                        Total_CatalogProduct = Convert.ToInt32(headerValues.FirstOrDefault());
                     }
 
                     //Get Total Number Of Pages
                     if (response.Headers.TryGetValues("X-WP-TotalPages", out headerValues))
                     {
-                        Total_Page = Convert.ToInt32(headerValues.FirstOrDefault());
+                        Total_CatalogPage = Convert.ToInt32(headerValues.FirstOrDefault());
                     }
 
-                    var dt = JsonConvert.DeserializeObject<ObservableCollection<CatalogDataModel>>(contents);
+                    var dt = JsonConvert.DeserializeObject<ObservableCollection<CatalogModel>>(contents);
 
                     return dt;
                 }
