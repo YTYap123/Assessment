@@ -92,7 +92,7 @@ namespace Assesstment.ViewModels
                 {
                     exisiting_cart.Quantity++;
                     var cart_price = Convert.ToDouble(exisiting_cart.catalogModel.product_price.Remove(0, 3));
-                    TotalCartPrice_double = Math.Round(Convert.ToDouble(TotalCartPrice_string.Remove(0, 3)) - cart_price, 2);
+                    TotalCartPrice_double = Math.Round(Convert.ToDouble(TotalCartPrice_string.Remove(0, 3)) + cart_price, 2);
                     TotalCartPrice_string = GlobalFunction.ReturnRMString(TotalCartPrice_double.ToString());
                 }
             }
